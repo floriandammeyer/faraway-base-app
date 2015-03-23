@@ -1,0 +1,8 @@
+.DS_Store
+# Projektdateien von PhpStorm mit ins Repo aufnehmen, damit die Projekt-Konfiguration
+# wie ausgeschlossene Verzeichnisse usw. immer vorhanden ist
+# TODO: werden im Projekt die deployment-server (samt ihren FTP zugangsdaten!) gespeichert??? dann müsste der projektordner natürlich doch aus GitHub verschwinden
+# .idea
+.project
+.settings
+.vagrant

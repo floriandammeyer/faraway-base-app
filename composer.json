@@ -1,0 +1,17 @@
+{
+	"name": "floriandammeyer/faraway-base-app",
+	"type": "project",
+	"license": "proprietary",
+    "require": {
+        "php": ">=5.4",
+        "zendframework/zendframework": "2.3.*"
+	    "propel/propel": "~2.0@dev",
+	    "floriandammeyer/zf2propel2": "*"
+    },
+	"repositories": [
+		{
+			"type": "vcs",
+			"url": "https://github.com/floriandammeyer/Zf2Propel2"
+		}
+	]
+}

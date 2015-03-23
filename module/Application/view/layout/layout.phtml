@@ -1,0 +1,67 @@
+<?php echo $this->doctype() ?>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+    <?php
+    echo $this->headMeta()
+        ->appendName('viewport', 'width=device-width, initial-scale=1.0')
+        ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
+    ?>
+
+    <?php echo $this->headTitle('FarAway Base App')->setSeparator(' - ')->setAutoEscape(false) ?>
+
+    <!-- Scripts -->
+    <!-- Include the basic configuration prior to including RequireJS -->
+    <script type="text/javascript">
+        // <![CDATA[
+        // We need to make the basePath accessible to JavaScripts
+        var basePath = "<?php echo $this->basePath() ?>";
+        // ]]>
+    </script>
+    <?php
+    echo $this->headScript()
+        ->prependFile($this->basePath() . '/js/lib/requirejs/require.js')
+        ->prependFile($this->basePath() . '/js/modules/application/config/require.config.js');
+    ?>
+    <script type="text/javascript">
+        // <![CDATA[
+        // Include the main script to run basic set-up operations,
+        // then load all additional scripts
+        require(["application/main"], function() {
+            require([
+                <?php echo $this->requirejs() ?>
+            ]);
+        });
+        // ]]>
+    </script>
+
+
+    <?php
+    echo $this->headLink()
+        ->prependStylesheet($this->basePath() . '/js/lib/DataTables/media/css/jquery.dataTables_themeroller.css')
+        ->prependStylesheet($this->basePath() . '/js/lib/x-editable/dist/jqueryui-editable/css/jqueryui-editable.css')
+        ->prependStylesheet($this->basePath() . '/js/lib/jquery-ui/themes/smoothness/theme.css')
+        ->prependStylesheet($this->basePath() . '/js/lib/jquery-ui/themes/smoothness/jquery-ui.css')
+    ?>
+</head>
+<body>
+<header>
+    <div class="logo">
+        FarAway Base App
+    </div>
+</header>
+<div style="position: relative;">
+    <nav id="sidebar">
+        <?php echo $this->navigation('navigation')->menu()->render() ?>
+        <div class="version_information">
+            <?php echo $this->version() ?>
+        </div>
+    </nav>
+    <section id="content">
+        <?php echo $this->content ?>
+    </section>
+</div>
+</body>
+</html>

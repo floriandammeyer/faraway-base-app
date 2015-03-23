@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<database name="default" defaultIdMethod="native">
+	<table name="application_config" phpName="Config" namespace="Application\Model">
+		<column name="name" phpName="Name" type="VARCHAR" size="255" primaryKey="true" required="true" />
+		<column name="value" phpName="Value" type="LONGVARCHAR" sqlType="TEXT" required="true" />
+	</table>
+</database>
